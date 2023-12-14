@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Making Program</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia:wght@400;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5 animated fadeIn">
+        <h1 class="ourdrs">
+            Under the supervision of:
+            <br>
+            Dr: Abeer Amer            
+            <br>
+            Dr: Nourhan Nasr
+        </h1>
+        <h1 class="mb-4">Decision Making Program</h1>
+
+        <form id="decisionForm">
+            <div class="form-group">
+                <label for="numStates">Enter the number of States of Nature:</label>
+                <input type="number" class="form-control" id="numStates" required>
+            </div>
+
+            <div class="form-group">
+                <label for="numAlternatives">Enter the number of Alternatives:</label>
+                <input type="number" class="form-control" id="numAlternatives" required>
+            </div>
+
+            <table class="table" id="dataTable">
+            </table>
+
+            <div class="row mt-3">
+                <div class="col">
+                    <button type="button" class="btn btn-primary btn-block" onclick="collectData()">
+                        <i class="fas fa-arrow-right"></i> Continue
+                    </button>
+                </div>
+                <div class="col">
+                    <button id="calculateButton" type="button" class="btn btn-success btn-block" onclick="calculateDecision()" disabled>
+                        <i class="fas fa-calculator"></i> Calculate Decision
+                    </button>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <div class="form-group">
+                        <select class="form-control" id="criterionChoice" required>
+                            <option value="1">Maximax (Optimistic)</option>
+                            <option value="2">Maximin (Pessimistic)</option>
+                            <option value="3">Criterion of Realism (Hurwicz)</option>
+                            <option value="4">Equally Likely (Laplace)</option>
+                            <option value="5">Minimax Regret</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div id="results" class="mt-4"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
